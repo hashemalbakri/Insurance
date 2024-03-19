@@ -154,10 +154,11 @@ class CashTransferInsura(models.Model):
     diwanFees = models.IntegerField()
     adminFees = models.IntegerField()
     total = models.IntegerField()
-    paymentMethod = (
+    paymentMethodChoices = (
         ('Cash','Cash'),
         ('Bank Transfer','Bank Transfer')
     )
+    paymentMethod = models.CharField(max_length = 60 , choices= paymentMethodChoices , default = 'Cash')
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
@@ -188,10 +189,11 @@ class HonestyGuaranteeInsur(models.Model):
     diwanFees = models.IntegerField()
     adminFees = models.IntegerField()
     total = models.IntegerField()
-    paymentMethod = (
+    paymentMethodChoices = (
         ('Cash','Cash'),
         ('Bank Transfer','Bank Transfer')
     )
+    paymentMethod = models.CharField(max_length = 60 , choices= paymentMethodChoices , default = 'Cash')
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
@@ -224,10 +226,11 @@ class CashSafeKeepInsura(models.Model):
     diwanFees = models.IntegerField()
     adminFees = models.IntegerField()
     total = models.IntegerField()
-    paymentMethod = (
+    paymentMethodChoices = (
         ('Cash','Cash'),
         ('Bank Transfer','Bank Transfer')
     )
+    paymentMethod = models.CharField(max_length = 60 , choices= paymentMethodChoices , default = 'Cash')
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
@@ -248,17 +251,19 @@ class TransportationInsur(models.Model):
     investLicenseNo = models.CharField(max_length = 200)
     address1 = models.CharField(max_length= 200)
     phNo = models.CharField(max_length = 100)
-    contractCurr = (
+    contractCurrChoices = (
         ('Dollar','Dollar'),
         ('IQ','IQ')
     )
+    contractCurr = models.CharField(max_length = 60 , choices = contractCurrChoices , default = 'IQ')
     shipmentValue = models.CharField(max_length = 300)
     goodsInsurType = models.TextField(max_length = 5000)
-    tripType = (
+    tripTypeChoices = (
         ('Land','Land'),
         ('Sea','Sea'),
         ('Air','Air')
     )
+    tripType = models.CharField(max_length = 60 , choices = tripTypeChoices , default = 'Land')
     carNo = models.CharField(max_length = 100, null = True)
     shipName = models.CharField(max_length = 200,null = True)
     flightNo = models.CharField(max_length = 200 ,null = True)
@@ -321,11 +326,12 @@ class FireInsur(models.Model):
     diwanFees = models.IntegerField()
     adminFees = models.IntegerField()
     total = models.IntegerField()
-    paymentMethod = (
+    paymentMethodChoices = (
         ('Cash','Cash'),
         ('Bank Transfer','Bank Transfer'),
         ('Check','Check'),
     )
+    paymentMethod = models.CharField(max_length = 60 , choices= paymentMethodChoices , default = 'Cash')
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
     
@@ -347,11 +353,12 @@ class CargoTransportInsur(models.Model):
     basisEvaluation = models.CharField(max_length = 200)
     shipmentValue = models.CharField(max_length = 400)
     desGoodsService  = models.CharField(max_length = 100)
-    tripType = (
+    tripTypeChoices = (
         ('Land','Land'),
         ('Sea','Sea'),
         ('Air','Air')
     )
+    tripType = models.CharField(max_length = 60 , choices = tripTypeChoices , default = 'Land')
     carNo = models.CharField(max_length = 100, null = True)
     shipName = models.CharField(max_length = 200,null = True)
     flightNo = models.CharField(max_length = 200 ,null = True)
