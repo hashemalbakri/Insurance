@@ -122,6 +122,11 @@ class CarInsur(models.Model):
     total = models.IntegerField()
     voucherNo = models.CharField(max_length = 600)
     voucherDate = models.CharField(max_length = 200)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
     
     def __str__(self):
         return f"{self.nameInsured}"
@@ -162,6 +167,11 @@ class CashTransferInsura(models.Model):
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
 
     def __str__(self):
         return f"{self.email}"
@@ -197,6 +207,11 @@ class HonestyGuaranteeInsur(models.Model):
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
     
     def __str__(self):
         return f"{self.email}"
@@ -234,6 +249,11 @@ class CashSafeKeepInsura(models.Model):
     paymentReceiptNo = models.CharField(max_length = 200 ,null = True)
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
 
     def __str__(self):
         return f"{self.email}"
@@ -289,7 +309,12 @@ class TransportationInsur(models.Model):
     adminFees = models.IntegerField()
     total = models.IntegerField()
     voucherNo = models.CharField(max_length = 200)
-    voucherDate = models.CharField(max_length = 200)    
+    voucherDate = models.CharField(max_length = 200)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')    
     
     def __str__(self):
         return f"{self.numberDoc}"
@@ -334,6 +359,11 @@ class FireInsur(models.Model):
     paymentMethod = models.CharField(max_length = 60 , choices= paymentMethodChoices , default = 'Cash')
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
     
     def __str__(self):
         return f"{self.numberDoc}"
@@ -385,6 +415,11 @@ class CargoTransportInsur(models.Model):
     total = models.IntegerField()
     transferNo = models.CharField(max_length = 200, null = True)
     transferDate = models.CharField(max_length = 200, null = True)
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
     
     def __str__(self):
         return f"{self.numberDoc}"
@@ -413,6 +448,11 @@ class NotifyingContarctorsInsur(models.Model):
     diwanFees = models.IntegerField()
     adminFees = models.IntegerField()
     total = models.IntegerField()
+    statusChoices = (
+        ('Pending' , 'Pending'),
+        ('Approved' , 'Approved')
+    )
+    status = models.CharField(max_length = 100 , choices = statusChoices , default = 'Pending')
     
     def __str__(self):
         return f"{self.numberDoc}"
