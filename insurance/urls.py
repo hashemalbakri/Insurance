@@ -10,6 +10,9 @@ router.register('CashSafeKeepInsura' , views.CashSafeKeepInsuraViewset)
 router.register('CashTransferInsura' , views.CashTransferInsuraViewset)
 router.register('TransportationInsur' , views.TransportationInsurViewset)
 router.register('HonestyGuaranteeInsur' , views.HonestyGuaranteeInsurViewset)
+router.register('FireInsur' , views.FireInsurViewset)
+router.register('CargoTransportInsur' , views.CargoTransportInsurViewset)
+router.register('NotifyingContarctorsInsur' , views.NotifyingContarctorsInsurViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

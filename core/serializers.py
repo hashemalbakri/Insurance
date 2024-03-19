@@ -1,4 +1,4 @@
-from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur
+from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur , FireInsur , CargoTransportInsur , NotifyingContarctorsInsur
 from rest_framework import serializers
 from djoser.serializers import UserCreateSerializer
 from django.contrib.auth import get_user_model
@@ -33,4 +33,21 @@ class HonestyGuaranteeInsurSerializer(serializers.ModelSerializer):
     class Meta:
         model = HonestyGuaranteeInsur
         fields = '__all__'
+
+class FireInsurSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FireInsur
+        fields = '__all__'
+        
+class CargoTransportInsurSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CargoTransportInsur
+        fields = '__all__'
+        
+class NotifyingContarctorsInsurSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NotifyingContarctorsInsur
+        fields = '__all__'
+        
+    
         

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur
-from .serializers import CarInsurSerializer , CashSafeKeepInsuraSerializer , CashTransferInsuraSerializer , TransportationInsurSerializer , HonestyGuaranteeInsurSerializer
+from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur , FireInsur , CargoTransportInsur , NotifyingContarctorsInsur
+from .serializers import CarInsurSerializer , CashSafeKeepInsuraSerializer , CashTransferInsuraSerializer , TransportationInsurSerializer , HonestyGuaranteeInsurSerializer , FireInsurSerializer , CargoTransportInsurSerializer , NotifyingContarctorsInsurSerializer
 from rest_framework import viewsets
 
 def index(request):
@@ -25,3 +25,15 @@ class TransportationInsurViewset(viewsets.ModelViewSet):
 class HonestyGuaranteeInsurViewset(viewsets.ModelViewSet):
     queryset = HonestyGuaranteeInsur.objects.all()
     serializer_class = HonestyGuaranteeInsurSerializer
+    
+class FireInsurViewset(viewsets.ModelViewSet):
+    queryset = FireInsur.objects.all()
+    serializer_class = FireInsurSerializer
+    
+class CargoTransportInsurViewset(viewsets.ModelViewSet):
+    queryset = CargoTransportInsur.objects.all()
+    serializer_class = CargoTransportInsurSerializer
+    
+class NotifyingContarctorsInsurViewset(viewsets.ModelViewSet):
+    queryset = NotifyingContarctorsInsur.objects.all()
+    serializer_class = NotifyingContarctorsInsurSerializer

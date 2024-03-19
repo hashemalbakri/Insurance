@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur
+from .models import UserAccount , CarInsur , CashSafeKeepInsura , CashTransferInsura , TransportationInsur , HonestyGuaranteeInsur , FireInsur , CargoTransportInsur , NotifyingContarctorsInsur
 
 # Register your models here.
 
@@ -56,3 +56,6 @@ admin.site.register(CashSafeKeepInsura)
 admin.site.register(CashTransferInsura)
 admin.site.register(TransportationInsur)
 admin.site.register(HonestyGuaranteeInsur)
+admin.site.register(FireInsur)
+admin.site.register(CargoTransportInsur)
+admin.site.register(NotifyingContarctorsInsur)

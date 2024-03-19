@@ -150,26 +150,26 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-REST_FRAMEWORK = {
-      'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
+# REST_FRAMEWORK = {
+#       'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated'
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
 
 
-SIMPLE_JWT = {
-    "AUTH_HEADER_TYPES": (
-        "Bearer",
-        "JWT"),
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=60),
-    "SIGNING_KEY": 'y5Hsf4IGE4DbxZGgEEhrmDDZZUcwQf3f',
-    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
-    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
-}
+# SIMPLE_JWT = {
+#     "AUTH_HEADER_TYPES": (
+#         "Bearer",
+#         "JWT"),
+#     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
+#     "REFRESH_TOKEN_LIFETIME": timedelta(days=60),
+#     "SIGNING_KEY": 'y5Hsf4IGE4DbxZGgEEhrmDDZZUcwQf3f',
+#     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+#     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+# }
 
 DJOSER = {
     'LOGIN_FIELD': 'email',

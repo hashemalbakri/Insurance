@@ -290,3 +290,122 @@ class TransportationInsur(models.Model):
         return f"{self.numberDoc}"
  
 
+class FireInsur(models.Model):
+    numberDoc = models.CharField(max_length= 150)
+    releaseDate = models.CharField(max_length = 100)
+    nameInsured = models.CharField(max_length = 100)
+    idNo = models.CharField(max_length = 100)
+    investLicenseNo = models.CharField(max_length = 200)
+    phNo = models.CharField(max_length = 100)
+    phNo1 = models.CharField(max_length = 100)
+    address = models.CharField(max_length= 200)
+    email = models.EmailField(max_length = 200)
+    insuraType = models.CharField(max_length = 200)
+    descripInsuraShop = models.CharField(max_length = 400)
+    address1 = models.CharField(max_length= 200)
+    currency = models.CharField(max_length = 100)
+    insurPeriodFrom = models.CharField(max_length = 100)
+    insurPeriodTo = models.CharField(max_length = 100)
+    propDescrip = models.TextField()
+    totalInsura = models.CharField(max_length = 100)
+    converages = models.TextField()
+    dangers = models.TextField()
+    amountBorneInsured = models.TextField()
+    materialDamage = models.CharField(max_length = 200)
+    physicalDamage = models.CharField(max_length = 200)
+    waterDamage = models.CharField(max_length = 200)
+    stealing = models.CharField(max_length = 200)
+    conditions = models.TextField(max_length = 5000)
+    netPremium = models.IntegerField()
+    stampFees = models.IntegerField()
+    diwanFees = models.IntegerField()
+    adminFees = models.IntegerField()
+    total = models.IntegerField()
+    paymentMethod = (
+        ('Cash','Cash'),
+        ('Bank Transfer','Bank Transfer'),
+        ('Check','Check'),
+    )
+    transferNo = models.CharField(max_length = 200, null = True)
+    transferDate = models.CharField(max_length = 200, null = True)
+    
+    def __str__(self):
+        return f"{self.numberDoc}"
+    
+
+class CargoTransportInsur(models.Model):
+    numberDoc = models.CharField(max_length= 150)
+    releaseDate = models.CharField(max_length = 100)
+    nameInsured = models.CharField(max_length = 100)
+    beneficiaryName = models.CharField(max_length = 100)
+    companyName = models.CharField(max_length = 100)
+    investLicenseNo = models.CharField(max_length = 200)
+    address = models.CharField(max_length= 200)
+    address1 = models.CharField(max_length= 200)
+    phNo = models.CharField(max_length = 100)
+    phNo1 = models.CharField(max_length = 100)
+    basisEvaluation = models.CharField(max_length = 200)
+    shipmentValue = models.CharField(max_length = 400)
+    desGoodsService  = models.CharField(max_length = 100)
+    tripType = (
+        ('Land','Land'),
+        ('Sea','Sea'),
+        ('Air','Air')
+    )
+    carNo = models.CharField(max_length = 100, null = True)
+    shipName = models.CharField(max_length = 200,null = True)
+    flightNo = models.CharField(max_length = 200 ,null = True)
+    conveyance = models.CharField(max_length = 200 ,null = True)
+    shipmentDate = models.CharField(max_length = 200 ,null = True)
+    voyageFrom = models.CharField(max_length = 200 ,null = True)
+    voyageTo = models.CharField(max_length = 200 ,null = True)
+    packaging = models.CharField(max_length = 200 ,null = True)
+    coverageType = models.CharField(max_length = 200 ,null = True)
+    additionalCoverage = models.CharField(max_length = 200 , null = True)
+    deductible = models.CharField(max_length = 200 , null = True)
+    invoiceNo = models.CharField(max_length = 200 , null = True)
+    bankName = models.CharField(max_length = 200 , null = True)
+    invoiceAmount = models.CharField(max_length = 200 , null = True)
+    LCNo = models.CharField(max_length = 200 , null = True)
+    shippingMethod = models.CharField(max_length = 200 , null = True)
+    increaseRate = models.CharField(max_length = 200 , null = True)
+    totalSumInsured = models.CharField(max_length = 200 , null = True)
+    conditions = models.TextField(max_length = 5000)
+    netPremium = models.IntegerField()
+    stampFees = models.IntegerField()
+    diwanFees = models.IntegerField()
+    adminFees = models.IntegerField()
+    total = models.IntegerField()
+    transferNo = models.CharField(max_length = 200, null = True)
+    transferDate = models.CharField(max_length = 200, null = True)
+    
+    def __str__(self):
+        return f"{self.numberDoc}"
+    
+    
+class NotifyingContarctorsInsur(models.Model):
+    numberDoc = models.CharField(max_length= 150)
+    releaseDate = models.CharField(max_length = 100)
+    address = models.CharField(max_length= 200)
+    phNo = models.CharField(max_length = 100)
+    coverType = models.CharField(max_length = 100)
+    nameInsured = models.CharField(max_length = 100)
+    insurancePeriodFrom = models.CharField(max_length = 100)
+    insurancePeriodTo = models.CharField(max_length = 100)
+    coverages = models.TextField(max_length = 5000)
+    wastedLoss = models.TextField(max_length = 5000)
+    projectDetails = models.TextField(max_length = 5000)
+    discounts = models.TextField(max_length = 5000)
+    liabiltyLimited = models.TextField(max_length = 2000)
+    conditions = models.TextField(max_length = 5000)
+    exceptions = models.TextField(max_length = 5000)
+    arbitraionsTerm = models.TextField(max_length = 5000)
+    voucherNo = models.CharField(max_length = 600)
+    netPremium = models.IntegerField()
+    stampFees = models.IntegerField()
+    diwanFees = models.IntegerField()
+    adminFees = models.IntegerField()
+    total = models.IntegerField()
+    
+    def __str__(self):
+        return f"{self.numberDoc}"
